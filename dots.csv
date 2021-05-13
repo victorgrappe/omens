@@ -1,0 +1,16 @@
+order,key,<,astre,country,city
+0,dot,,,,
+1.0,astre,dot,,,
+1.1,country,dot,,,
+1.2,city,dot,,,
+1.3,sapiens,dot,,,
+2.0,earth,astre,,,
+2.1,france,country,earth,,
+2.2,spain,country,earth,,
+3.0,lyon,city,earth,france,
+3.1,paris,city,earth,france,
+3.2,ibiza,city,earth,spain,
+3.3,victor,sapiens,,,lyon
+4.0,victor-0,victor,,,lyon
+4.1,victor-1,victor,,,paris
+4.2,victor-2,victor,,,ibiza
