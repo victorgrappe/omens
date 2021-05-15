@@ -30,7 +30,7 @@ def clearScreen():
       os.system('cls')
 
 
-def summarize(df):
+def display(df):
     clearScreen()
     rows, columns = os.popen('stty size', 'r').read().split()
     sep = '-' * int(columns)
@@ -45,7 +45,7 @@ def summarize(df):
 
 def run():
     dot_df = getDots()
-    summarize(df=dot_df)
+    display(df=dot_df)
 
 
 if __name__ == '__main__':
