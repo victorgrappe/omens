@@ -1,51 +1,35 @@
 
-import os
 import pandas
 import numpy
 
+import term
 
 def getDots():
     dot_df = pandas.read_csv(
         filepath_or_buffer='./dots.csv',
-        dtype={
-            'order':    'object',
-            'key':      'object',
-            '<':        'object',
-            'astre':    'object',
-            'country':  'object',
-            'city':     'object',
-            'mass':     'float',
-            'utc':      'object'
-        },
-        parse_dates=['utc'],
+        dtype='object',
     )
     dot_df = dot_df.drop(labels=['order'], axis=1)
     return dot_df
 
 
-def clearScreen():
-   if os.name == 'posix':
-      os.system('clear')
-   else:
-      os.system('cls')
-
-
-def display(df):
-    clearScreen()
-    rows, columns = os.popen('stty size', 'r').read().split()
-    sep = '-' * int(columns)
-    print(sep)
-    print(df)
-    print(sep)
-    print(df.dtypes)
-    print(sep)
-    print('shape :', df.shape, 'size', df.size)
-    print(sep)
+def split(df):
+    inc_coll = list(df.columns.values)
+    inc_coll.remove('key')
+    inc_coll.remove('<')
+    key_df = df[['key']]
+    hier_df = df[['<']]
+    inc_df = df[inc_coll]
+    return key_df, hier_df, inc_df
 
 
 def run():
+    term.clear()
     dot_df = getDots()
-    display(df=dot_df)
+    print(dot_df); term.separtor()
+
+    key_df, hier_df, inc_df = split(df=dot_df)
+    print(key_df); term.separtor()
 
 
 if __name__ == '__main__':
