@@ -7,6 +7,7 @@ rm -f Pipfile Pipfile.lock
 pipenv install --python "${O_PYTHON_VERSION}"
 
 pipenv install "numpy==${O_PYTHON_NUMPY_VERSION}"
+pipenv install "scipy==${O_PYTHON_SCIPY_VERSION}"
 pipenv install "pandas==${O_PYTHON_PANDAS_VERSION}"
 
 pipenv check
