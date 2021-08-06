@@ -3,7 +3,7 @@ MATCH (n) DETACH DELETE n;
 CALL apoc.schema.assert({},{},true) YIELD label, key RETURN *;
 
 LOAD CSV WITH HEADERS FROM 'file:///airtable/dot.csv' AS row
-CREATE (n:Dot {
+CREATE (d:Dot {
   index:    toInteger(row.Index),
   name:     row.Name,
   class:    toInteger(split(row.Class, ".")[0]),
@@ -12,9 +12,9 @@ CREATE (n:Dot {
 
 CREATE INDEX ON :Dot(index);
 
-MATCH (c:Dot),(p:Dot)
-WHERE c.class = p.index
-CREATE (c)-[:CLASS]->(p);
+MATCH (child:Dot),(parent:Dot)
+WHERE child.class = parent.index
+CREATE (child)-[:CLASS]->(parent);
 
 MATCH (dot:Dot),(tag:Dot)
 WHERE tag.index IN dot.tag
