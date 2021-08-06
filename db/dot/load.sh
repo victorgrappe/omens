@@ -24,6 +24,6 @@ mkdir "${O_DB_LOC_PATH}/import/dot"
 cp "./db/dot/dot.csv" "${O_DB_LOC_PATH}/import/dot"
 cat "${O_DB_LOC_PATH}/import/dot/dot.csv"
 
-executeLocalCypher "./db/dot/load_dot.cyp"
+executeLocalCypher "./db/dot/load.cyp"
 
 echo "################################################################"
