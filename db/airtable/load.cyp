@@ -16,4 +16,8 @@ MATCH (c:Dot),(p:Dot)
 WHERE c.class = p.index
 CREATE (c)-[:CLASS]->(p);
 
+MATCH (dot:Dot),(tag:Dot)
+WHERE tag.index IN dot.tag
+CREATE (dot)-[:TAG]->(tag);
+
 MATCH (n) RETURN n;
