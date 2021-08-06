@@ -5,6 +5,7 @@ Run
 ---
 ```sh
 sh ./db/dot/load.sh
+sh ./db/airtable/load.sh
 sh ./db/movie/load.sh
 sh ./db/northwind/load.sh
 ```
