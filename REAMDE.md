@@ -4,7 +4,7 @@ Omens
 Run
 ---
 ```sh
-sh ./sh/load.sh
+sh ./db/dot/load.sh
 ```
 
 

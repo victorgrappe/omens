@@ -1,6 +1,6 @@
 MATCH (n) DETACH DELETE n;
 
-LOAD CSV WITH HEADERS FROM "file:///dot.csv" AS line
+LOAD CSV WITH HEADERS FROM "file:///dot/dot.csv" AS line
 MERGE (a:Dot { id: line.Index })
    ON MATCH SET a.name = line.Name
    ON CREATE SET a.name = line.Name

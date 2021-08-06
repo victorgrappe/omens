@@ -20,9 +20,10 @@ ls -l "${O_DB_LOC_PATH}/import"
 echo "----------------------------------------------------------------"
 
 echo "${O_S_BP} Copy dot into import folder"
-cp "./dot/dot.csv" "${O_DB_LOC_PATH}/import/"
-cat "${O_DB_LOC_PATH}/import/dot.csv"
+mkdir "${O_DB_LOC_PATH}/import/dot"
+cp "./db/dot/dot.csv" "${O_DB_LOC_PATH}/import/dot"
+cat "${O_DB_LOC_PATH}/import/dot/dot.csv"
 
-executeLocalCypher "./cyp/load.cyp"
+executeLocalCypher "./db/dot/load_dot.cyp"
 
 echo "################################################################"
