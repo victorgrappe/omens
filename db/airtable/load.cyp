@@ -6,7 +6,8 @@ LOAD CSV WITH HEADERS FROM 'file:///airtable/dot.csv' AS row
 CREATE (n:Dot {
   index:    toInteger(row.Index),
   name:     row.Name,
-  class:    toInteger(split(row.Class, ".")[0])
+  class:    toInteger(split(row.Class, ".")[0]),
+  tag:      [tag IN split(row.Tag, ",") | toInteger(split(tag, ".")[0]) ]
 });
 
 CREATE INDEX ON :Dot(index);
