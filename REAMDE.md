@@ -3,13 +3,29 @@ Omens
 
 Run
 ---
+
+### airtable
+```sh
+sh ./db/airtable/load.sh
+sh ./db/airtable/extract.sh
+```
+### dot
 ```sh
 sh ./db/dot/load.sh
-sh ./db/airtable/load.sh
-sh ./db/airtable/sh/extract.sh
+```
+### movie
+```sh
 sh ./db/movie/load.sh
+```
+### ned
+```sh
+sh ./db/ned/extract.sh
+```
+### northwind
+```sh
 sh ./db/northwind/load.sh
 ```
+
 
 Setup
 -----
